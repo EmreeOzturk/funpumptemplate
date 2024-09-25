@@ -59,15 +59,13 @@ const dummyData = [
     creatorAvatar: "https://i.pravatar.cc/300?img=10",
     description: "FrogoCoin is leaping over competition. Buy now or croak later!"
   },
-  
+
 ];
 
 import CoinCard from "./coin-card";
 const CoinCardList = () => {
   return (
-    <div className="
-      flex items-start justify-center gap-4 flex-wrap w-full mt-16 
-    ">
+    <div className="flex items-start justify-center gap-4 flex-wrap w-full mt-16 ">
       {
         dummyData.map((coin, index) => (
           <CoinCard
