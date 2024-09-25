@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+/* eslint-disable @next/next/no-img-element */
 
 
 interface KingOfHillCardProps {
