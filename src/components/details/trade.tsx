@@ -1,19 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar } from "@/components/ui/avatar";
 
-const TradingInterface = ({ coinName, coinImage }) => {
+interface TradingInterfaceProps {
+    coinName: string;
+    coinImage: string;
+}
+const TradingInterface: React.FC<TradingInterfaceProps> = ({ coinName, coinImage }) => {
     const [mode, setMode] = useState('buy');
     const [amount, setAmount] = useState('0.0');
     const [coin, setCoin] = useState('SOL');
 
-    const handleModeChange = (newMode) => {
+    const handleModeChange = (newMode: SetStateAction<string>) => {
         setMode(newMode);
     };
 
-    const handleAmountChange = (e) => {
+    const handleAmountChange = (e: { target: { value: SetStateAction<string>; }; }) => {
         setAmount(e.target.value);
     };
 
@@ -21,11 +26,11 @@ const TradingInterface = ({ coinName, coinImage }) => {
         setAmount('0.0');
     };
 
-    const handleQuickAmount = (value) => {
+    const handleQuickAmount = (value: string | number) => {
         if (coin === 'SOL') {
             setAmount(value.toString());
         } else {
-            setAmount((parseFloat(value) * 100).toString());
+            setAmount((parseFloat(value as string) * 100).toString());
         }
     };
 
