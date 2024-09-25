@@ -35,7 +35,7 @@ const CoinCard: React.FC<CoinCardProps> = (
         <div className="flex-1">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center space-x-2">
-              <span className="text-blue-400">Created by</span>
+              <span className="text-blue-400">Creator:</span>
               <Avatar className="w-5 h-5">
                 <img src={creatorAvatar} alt="Creator" className="object-cover" />
               </Avatar>
@@ -46,10 +46,10 @@ const CoinCard: React.FC<CoinCardProps> = (
             <span className="text-gray-400 text-sm">
               {
                 timeDiffInDays > 1
-                  ? `${Math.floor(timeDiffInDays)} days ago`
+                  ? `${Math.floor(timeDiffInDays)} d ago`
                   : timeDiffInHours > 1
-                    ? `${Math.floor(timeDiffInHours)} hours ago`
-                    : `${Math.floor(timeDiffInMinutes)} minutes ago`
+                    ? `${Math.floor(timeDiffInHours)} h ago`
+                    : `${Math.floor(timeDiffInMinutes)} m ago`
               }
             </span>
           </div>
